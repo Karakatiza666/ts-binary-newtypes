@@ -15,3 +15,4 @@ export const unsafeFromHexed = <T>(c: { from_bytes: (bytes: Uint8Array) => T }) 
 
 export const toHexed = <T extends { to_bytes: () => Uint8Array }>(v: T) => unsafeToHexed<T>(v.to_bytes())
 export const unsafeToHexed = <T>(b: Uint8Array) => toHex(b) as Hexed<T>
+export const unsafeHexed = <T>(hex: string) => hex as Hexed<T>
